@@ -1,3 +1,6 @@
+# Custom React Projects .gitignore
+*.DS_Store
+
 # Logs
 logs
 *.log

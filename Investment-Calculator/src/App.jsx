@@ -12,6 +12,7 @@ const INITIAL_CAPITAL = {
 
 function App() {
   const [userInput, setUserInput] = useState(INITIAL_CAPITAL);
+  const isValidInput = userInput.duration > 0;
 
   function handleOnUserInput(type, value) {
     setUserInput((prevState) => {
@@ -26,7 +27,8 @@ function App() {
     <>
       <Header />
       <UserInput values={userInput} onUserInput={handleOnUserInput} />
-      <Results input={userInput} />
+      {isValidInput && <Results input={userInput} />}
+      {!isValidInput && <p className="center">Duration must be a positive value!</p>}
     </>
   );
 }
